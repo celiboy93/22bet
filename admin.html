@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - 2D Daily</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;700;900&family=Orbitron:wght@700;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Overlay -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-card">
+            <h2>🔐 Admin Login</h2>
+            <input type="password" id="passwordInput" placeholder="Password ထည့်ပါ" class="login-input" />
+            <button class="login-btn" id="loginBtn">Login</button>
+            <p class="login-error" id="loginError"></p>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="container admin-container" id="adminPanel" style="display:none;">
+        <header class="admin-header">
+            <h1>🛠️ Admin Panel</h1>
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+        </header>
+
+        <!-- Set Numbers -->
+        <section class="admin-section">
+            <h2>ယနေ့ ဂဏန်း ၄ လုံး သတ်မှတ်ရန်</h2>
+            <div class="admin-input-group">
+                <input type="text" id="fourDigitInput" maxlength="4" placeholder="ဂဏန်း ၄ လုံး ထည့်ပါ (ဥပမာ 4578)" class="admin-input" />
+                <button class="admin-save-btn" id="saveNumberBtn">💾 သိမ်းမည်</button>
+            </div>
+            <p class="admin-msg" id="saveMsg"></p>
+            <div class="current-set">
+                <span>လက်ရှိ သတ်မှတ်ထားသော ဂဏန်း:</span>
+                <strong id="currentSetNumber">----</strong>
+            </div>
+        </section>
+
+        <!-- Result History -->
+        <section class="admin-section">
+            <h2>📊 ရလဒ် History</h2>
+            <p class="section-sub">ရလဒ်ဂဏန်းထည့်ပြီး ပေါက်/မပေါက် auto စစ်ဆေးပါ</p>
+
+            <div class="result-entry-form">
+                <label>ရက်စွဲ ရွေးပါ:</label>
+                <input type="date" id="resultDate" class="admin-input" />
+
+                <div class="result-row">
+                    <div class="result-col">
+                        <label>12:00 ရလဒ်</label>
+                        <input type="text" id="result12" maxlength="2" placeholder="ဥပမာ 45" class="admin-input" />
+                    </div>
+                    <div class="result-col">
+                        <label>4:30 ရလဒ်</label>
+                        <input type="text" id="result430" maxlength="2" placeholder="ဥပမာ 78" class="admin-input" />
+                    </div>
+                </div>
+                <button class="admin-save-btn" id="saveResultBtn">✅ ရလဒ်သိမ်းမည်</button>
+                <p class="admin-msg" id="resultMsg"></p>
+            </div>
+
+            <!-- History Table -->
+            <div class="history-wrapper">
+                <table class="history-table" id="historyTable">
+                    <thead>
+                        <tr>
+                            <th>ရက်စွဲ</th>
+                            <th>၄ လုံး</th>
+                            <th>12:00</th>
+                            <th>စစ်ဆေးချက်</th>
+                            <th>4:30</th>
+                            <th>စစ်ဆေးချက်</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody"></tbody>
+                </table>
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </section>
+
+        <!-- View User Page -->
+        <section class="admin-section" style="text-align:center;">
+            <a href="index.html" class="view-user-btn" target="_blank">👁️ User Page ကြည့်ရန်</a>
+        </section>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
