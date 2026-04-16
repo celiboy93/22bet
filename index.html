@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D နေ့တိုင်း ပေါက်ချင်ပါသလား?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;700;900&family=Orbitron:wght@700;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="hero-header">
+            <div class="glow-text-wrapper">
+                <h1 class="glow-text">2D နေ့တိုင်း ပေါက်ချင်ပါသလား?</h1>
+            </div>
+            <div class="date-display" id="dateDisplay"></div>
+        </header>
+
+        <!-- Main Number Display -->
+        <section class="number-display-section">
+            <div class="number-card">
+                <div class="number-label">ယနေ့ ဂဏန်း ၄ လုံး</div>
+                <div class="big-number" id="bigNumber">----</div>
+                <div class="number-sub">Admin မှ သတ်မှတ်ထားသော ဂဏန်းများ</div>
+            </div>
+        </section>
+
+        <!-- How to Play -->
+        <section class="how-to-play-section">
+            <div class="accordion" id="howToPlayBtn">
+                <div class="accordion-header">
+                    <span>📖 ကစားနည်းဖတ်ရန်</span>
+                    <span class="arrow" id="arrow">▼</span>
+                </div>
+            </div>
+            <div class="accordion-body" id="howToPlayBody">
+                <div class="rules-content">
+                    <p>အထက်ဖော်ပြပါ ဂဏန်း၄လုံးသည် ယနေ့အတွက် ၁၂ဂဏန်းနဲ့ ၄ခွဲ ဂဏန်းအတွက် ၁လုံးထိ (သို့မဟုတ်) အပြီး ဖြစ်ပါမည်</p>
+                    <p>အရင်းနှီးရှိပြီး အမြတ်ပုံမှန်ရလိုသူများအတွက် ရည်ရွယ်ထားတဲ့ ကစားနည်းဖြစ်ပါသည်</p>
+                    <p>မနက်ပိုင်း ၁၂ဂဏန်းမှာ ယခု၄လုံးမထိပါက ညနေပိုင်းမှာ မိမိအမြတ်ငွေ ကျန်စေရန်နဲ့ မနက်ပိုင်းအရူံးငွေ ပြန်ရစေရန် (ဆတိုး) ကစားရပါမည်</p>
+                    <p>မနက်ပိုင်း ၁၂ဂဏန်းမှာ ထိသွားပါက ညနေပိုင်းဆက်ကစားဖို့ကတော့ မိမိသဘောအတိုင်းပါပဲ ဆက်ကစားချင်ရင်ကစားနိုင်သလို ရပ်လိုက်တာကပိုကောင်းပါသည်</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paired Numbers -->
+        <section class="paired-section">
+            <h2 class="section-title">တွဲထိုးရမယ့် ဂဏန်းများ</h2>
+            <p class="section-sub">အလွယ်တကူ ယူနိုင်ရန် ထည့်ပေးထားပါသည်</p>
+
+            <!-- With remaining 6 digits -->
+            <div class="pair-group">
+                <h3 class="pair-group-title">🔢 ကျန် ၆ လုံးနဲ့ တွဲထိုးရန်</h3>
+                <div class="number-grid" id="pairsWithOthers">
+                    <div class="empty-state">ဂဏန်း မရှိသေးပါ</div>
+                </div>
+            </div>
+
+            <!-- Among themselves -->
+            <div class="pair-group">
+                <h3 class="pair-group-title">🔄 Rထိုးကစားရန် (အချင်းချင်းတွဲ)</h3>
+                <div class="number-grid" id="pairsAmongSelf">
+                    <div class="empty-state">ဂဏန်း မရှိသေးပါ</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>2D Daily Prediction &copy; <span id="yearFooter"></span></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
